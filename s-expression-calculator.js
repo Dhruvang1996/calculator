@@ -17,7 +17,7 @@ const calculator = (arr) => {
   if( arr.split(' ').length === 1) return console.log(Number(arr));
   else {
     let startBracket = arr.lastIndexOf('(');
-    let endBracket = arr.indexOf(')');
+    let endBracket = arr.indexOf(')', startBracket);
     let strArr = arr.substring(startBracket+1, endBracket).split(' ');
     temp = expression(strArr[0], strArr.splice(1,strArr.length-1));
     arr = arr.substr(0,startBracket)+ temp + arr.substr(endBracket+1, arr.length);
